@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/formation">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/formation/providers">providers <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/formation/products">products</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" id="report" href="#">job d'import</a>
+      </li>
+
+
+            <li class="nav-item">
+        <a class="nav-link" href="/formation/carousel">Carousel</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<div id="popup-container">
+		<div id="close-btn-container">
+			 <span id="close-btn">&times;</span>
+		</div>
+		<h2>Liste des produits importés </h2>
+		<p id="prod"></p>
+	</div>
+
+
+
+<!-- Importer Jquery  -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//show popup
+			$("#report").click(function(){
+				$.ajax({
+				     type: "GET",
+				     url: '/formation/importProducts',
+				     success: function(response){
+				    	 document.getElementById('prod').innerHTML=response;
+				     }
+				});
+				
+				$("#popup-container").show();
+				
+				
+				
+			})
+			//close popup
+			$("#close-btn").click(function(){
+				$("#popup-container").hide();
+			})
+
+		})
+
+	</script>
+
+
+
+<!-- 
+<script>
+$('#report').on("click",function(){
+	$.ajax({
+	     type: "GET",
+	     url: '/formation/importProducts',
+	     success: function(response){
+	         alert(response);
+	     }
+	});
+	})
+</script>
+ -->
