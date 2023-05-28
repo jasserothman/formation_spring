@@ -1,7 +1,7 @@
 <%@ include file="includes/header.jspf"%>
 <%@ include file="includes/navbar.jspf"%>
 <body>
-
+<h3>this part of siteweb is out of work </h3>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
