@@ -5,6 +5,6 @@
 	Hello world!  
 </h1>
 
-<h3>this is web application by jasser othman</h3>
+<h3>this is web application by jasser othman a FULLSTACK developper</h3>
 <P>  The time on the server is ${serverTime}. </P>
 <%@ include file="includes/footer.jspf" %>
